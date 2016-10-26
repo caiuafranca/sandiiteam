@@ -5,6 +5,7 @@ class TreinosController < ApplicationController
   # GET /treinos.json
   def index
     @treinos = Treino.all
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
   end
 
   # GET /treinos/1

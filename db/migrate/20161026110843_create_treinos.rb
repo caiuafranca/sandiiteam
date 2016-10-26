@@ -3,7 +3,7 @@ class CreateTreinos < ActiveRecord::Migration
     create_table :treinos do |t|
       t.string :titulo
       t.text :descricao
-      t.date :data
+      t.date :date
 
       t.timestamps null: false
     end
