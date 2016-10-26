@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandiiteam</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <% if current_user.present? %>
+    Bem Vindo <%= current_user.name %> /
+    <%=  current_user.email %>
+    <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>
+  <% else %>
+    <%= link_to('Cadastrar', new_user_registration_path) %>
+    <%= link_to('Entrar', new_user_session_path) %>
+  <% end %>
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
